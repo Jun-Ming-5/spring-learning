@@ -18,8 +18,8 @@ public class AsyncTest {
     @Autowired
     private Sender sender;
 
-//    @Autowired   //Q1
-//    private AsyncTest asyncTest;
+    @Autowired   //Q1
+    private AsyncTest asyncTest;
 
     public AsyncTest(){
         System.out.println("AsyncTest Constructor");
@@ -39,8 +39,8 @@ public class AsyncTest {
     public void doSomething() {
         System.out.println("do something start " + LocalDateTime.now());
         System.out.println("do something ....");
-        sendMessage();          //Q3 为什么这儿没有异步效果
-        //asyncTest.sendMessage(); //Q4
+//        sendMessage();          //Q3 为什么这儿没有异步效果
+        asyncTest.sendMessage(); //Q4
         sender.sendMessage();     //为什么这儿有异步效果，是不是很眼熟，对：就是和@Transactional效果一样
         System.out.println("do something end " + LocalDateTime.now());
     }
@@ -62,6 +62,24 @@ public class AsyncTest {
      * Q3为什么没有异步效果
      * 打开Q1注释为什么会有循环引用,spring天生就能解决循环引用，为什么这儿不行
      * 将Q2注释Q4放开为什么没有循环引用的问题
+     * Q2处语句存在与否。生成的bean有什么区别
+     * 为什么Q4有异步效果
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     * A1:Q2处语句存在与否。生成的bean有什么区别
+     * 不存在时生成的是一个普通bean，存在时生成的是一个代理bean
+     *
+     *
+     *
      *
      *
      */
