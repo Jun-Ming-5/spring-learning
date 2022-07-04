@@ -17,6 +17,6 @@ public class AsyncMainApplicaton {
         ConfigurableApplicationContext context = SpringApplication.run(AsyncMainApplicaton.class, args);
         AsyncTest01 bean = context.getBean(AsyncTest01.class);
         System.out.println("bean..."+bean);
-        bean.doSomething();
+        bean.sendMessage();
     }
 }

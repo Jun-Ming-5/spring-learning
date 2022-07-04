@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
  * @author zhangfei
  * @date 2022/6/30 18:44
  **/
-@Configuration
-@Component
+//@Configuration
+//@Component
 public class CommonConfig {
     @Bean(name = "applicationEventMulticaster")
     public ApplicationEventMulticaster simpleApplicationEventMulticaster() {
