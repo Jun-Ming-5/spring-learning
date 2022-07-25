@@ -19,7 +19,7 @@ public class AsyncTest01 {
     public AsyncTest01(){
         System.out.println("AsyncTest Constructor");
     }
-    @Async
+    @Async("kafkaEventTaskExecutor")
     @Transactional(rollbackFor = Exception.class)
     @SneakyThrows
     public void sendMessage() {

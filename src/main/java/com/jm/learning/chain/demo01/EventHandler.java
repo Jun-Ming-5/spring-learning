@@ -1,6 +1,7 @@
 package com.jm.learning.chain.demo01;
 
 public interface EventHandler<T> {
-    int getIndex();
+    default int getIndex(){throw new IllegalStateException("不支持调用方式");}
+    default String getKey(){throw new IllegalStateException("不支持调用方式");}
     void handle(T t);
 }

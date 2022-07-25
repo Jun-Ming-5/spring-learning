@@ -17,7 +17,13 @@ public class HandlerOne implements EventHandler<ChainContext> {
     }
 
     @Override
+    public String getKey() {
+        return HandlerType.ONE.getName();
+    }
+
+    @Override
     public void handle(ChainContext chainContext) {
         System.out.println("handler one......");
+        chainContext.setKey(HandlerType.TWO.getName());
     }
 }

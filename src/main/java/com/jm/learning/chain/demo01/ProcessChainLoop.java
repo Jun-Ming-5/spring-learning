@@ -14,6 +14,7 @@ public class ProcessChainLoop implements ProcessChain<ChainContext> {
 
     private List<EventHandler<ChainContext>> handlers;
 
+
     public ProcessChainLoop(List<EventHandler<ChainContext>> handlers) {
         this.handlers = handlers.stream().sorted(Comparator.comparing(EventHandler::getIndex)).collect(Collectors.toList());
     }
